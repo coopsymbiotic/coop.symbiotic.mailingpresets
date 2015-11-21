@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<database xmlns:xi="http://www.w3.org/2001/XInclude">
+  <name>civicrm</name>
+  <character_set>utf8</character_set>
+  <collate>utf8_unicode_ci</collate>
+  <table_type>InnoDB</table_type>
+  <comment>Schema for CiviCRM</comment>
+  <xi:include href="Mailingpreset/files.xml" parse="xml" />
+</database>

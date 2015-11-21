@@ -1,0 +1,11 @@
+.crm-mailingpresets-form {
+
+}
+
+.crm-mailingpresets-entry {
+  padding: 1em;
+}
+
+.crm-mailingpresets-entry:nth-child(2n+0) {
+  background: #EFEFEF;
+}

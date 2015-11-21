@@ -1,0 +1,55 @@
+<div class="crm-container">
+  <div crm-ui-debug="mailingpresets"></div>
+
+  <form name="MailingPresetsForm" class="crm-mailingpresets-form" crm-ui-id-scope>
+    <div ng-show="! mailingpresets.length">
+      <p>{{ ts("Click on the New button to get started.") }}</p>
+    </div>
+
+    <div ng-repeat="preset in mailingpresets" class="crm-mailingpresets-entry">
+      <div ng-show="preset.name" class="crm-section">
+        <div class="label">{{ ts("Mailing name:") }}</div>
+        <div class="content"><input type="text" ng-model="preset.name" name="name" required></div>
+      </div>
+      <div class="crm-section">
+        <div class="label">{{ ts("Subject:") }}</div>
+        <div class="content"><input type="text" ng-model="preset.subject" name="subject" required></div>
+      </div>
+      <div class="crm-section">
+        <div class="label">{{ ts("From:") }}</div>
+        <div class="content">
+          <select
+            crm-ui-id="preset.from_id"
+            crm-ui-select="{allowClear: false, placeholder: ts('Email address')}"
+            style="width: 20em;"
+            name="from_id"
+            ng-model="preset.from_id">
+            <option ng-repeat="frm in crmFromAddresses.getAll() | filter:{is_active:1} | orderBy:'weight'" value="{{frm.id}}">{{frm.label}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="crm-section">
+        <div class="label">{{ ts("Message template:") }}</div>
+        <div class="content">
+          <select
+            crm-ui-id="preset.template_id"
+            crm-ui-select="{allowClear: false, placeholder: ts('Message template')}"
+            style="width: 20em;"
+            name="template_id"
+            ng-model="preset.template_id">
+            <option ng-repeat="tpl in crmMessageTemplates" value="{{tpl.id}}">{{tpl.msg_title}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="crm-section">
+        <div class="label"></div>
+        <div class="content">
+          <button ng-click="save(preset)" class="crm-button"><span><span class="icon ui-icon-circle-check"></span> {{ts('Save')}}</span></button>
+          <button ng-click="remove(preset)" class="crm-button"><span><span class="icon ui-icon-trash"></span> {{ts('Delete')}}</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div><button ng-click="newpreset()" class="crm-button"><span><span class="icon ui-icon-circle-plus"></span> {{ts('New')}}</span></button></div>
+  </form>
+</div>

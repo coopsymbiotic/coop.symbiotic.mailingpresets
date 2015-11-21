@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<table>
+  <base>CRM/Mailingpreset</base>
+  <class>Preset</class>
+  <name>preset</name>
+  <add>1.0</add>
+  <log>false</log>
+  <field>
+    <name>id</name>
+    <uniqueName>mailingpreset_id</uniqueName>
+    <title>Mailing Preset ID</title>
+    <type>int unsigned</type>
+    <length>10</length>
+    <required>true</required>
+    <comment>Mailing Preset Id</comment>
+    <add>1.0</add>
+  </field>
+  <primaryKey>
+     <name>id</name>
+     <autoincrement>true</autoincrement>
+  </primaryKey>
+  <field>
+    <name>name</name>
+    <type>varchar</type>
+    <required>true</required>
+    <length>255</length>
+    <add>1.0</add>
+    <comment>Mailing Preset Name</comment>
+  </field>
+  <field>
+    <name>subject</name>
+    <type>varchar</type>
+    <required>true</required>
+    <length>255</length>
+    <add>1.0</add>
+    <comment>Mailing Preset Subject</comment>
+  </field>
+  <field>
+    <name>from_id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <length>10</length>
+    <add>1.0</add>
+    <comment>From Email ID</comment>
+  </field>
+  <field>
+    <name>template_id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <length>10</length>
+    <add>1.0</add>
+    <comment>Message Template ID</comment>
+  </field>
