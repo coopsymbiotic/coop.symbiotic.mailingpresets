@@ -1,14 +1,14 @@
 <?php
 
-require_once 'webpagetomailing.civix.php';
+require_once 'mailingpresets.civix.php';
 
 /**
  * Implements hook_civicrm_config().
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_config
  */
-function webpagetomailing_civicrm_config(&$config) {
-  _webpagetomailing_civix_civicrm_config($config);
+function mailingpresets_civicrm_config(&$config) {
+  _mailingpresets_civix_civicrm_config($config);
 }
 
 /**
@@ -18,8 +18,8 @@ function webpagetomailing_civicrm_config(&$config) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_xmlMenu
  */
-function webpagetomailing_civicrm_xmlMenu(&$files) {
-  _webpagetomailing_civix_civicrm_xmlMenu($files);
+function mailingpresets_civicrm_xmlMenu(&$files) {
+  _mailingpresets_civix_civicrm_xmlMenu($files);
 }
 
 /**
@@ -27,8 +27,8 @@ function webpagetomailing_civicrm_xmlMenu(&$files) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_install
  */
-function webpagetomailing_civicrm_install() {
-  _webpagetomailing_civix_civicrm_install();
+function mailingpresets_civicrm_install() {
+  _mailingpresets_civix_civicrm_install();
 }
 
 /**
@@ -36,8 +36,8 @@ function webpagetomailing_civicrm_install() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_uninstall
  */
-function webpagetomailing_civicrm_uninstall() {
-  _webpagetomailing_civix_civicrm_uninstall();
+function mailingpresets_civicrm_uninstall() {
+  _mailingpresets_civix_civicrm_uninstall();
 }
 
 /**
@@ -45,8 +45,8 @@ function webpagetomailing_civicrm_uninstall() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
-function webpagetomailing_civicrm_enable() {
-  _webpagetomailing_civix_civicrm_enable();
+function mailingpresets_civicrm_enable() {
+  _mailingpresets_civix_civicrm_enable();
 }
 
 /**
@@ -54,8 +54,8 @@ function webpagetomailing_civicrm_enable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_disable
  */
-function webpagetomailing_civicrm_disable() {
-  _webpagetomailing_civix_civicrm_disable();
+function mailingpresets_civicrm_disable() {
+  _mailingpresets_civix_civicrm_disable();
 }
 
 /**
@@ -70,8 +70,8 @@ function webpagetomailing_civicrm_disable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_upgrade
  */
-function webpagetomailing_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  return _webpagetomailing_civix_civicrm_upgrade($op, $queue);
+function mailingpresets_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  return _mailingpresets_civix_civicrm_upgrade($op, $queue);
 }
 
 /**
@@ -82,8 +82,8 @@ function webpagetomailing_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_managed
  */
-function webpagetomailing_civicrm_managed(&$entities) {
-  _webpagetomailing_civix_civicrm_managed($entities);
+function mailingpresets_civicrm_managed(&$entities) {
+  _mailingpresets_civix_civicrm_managed($entities);
 }
 
 /**
@@ -95,8 +95,8 @@ function webpagetomailing_civicrm_managed(&$entities) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function webpagetomailing_civicrm_caseTypes(&$caseTypes) {
-  _webpagetomailing_civix_civicrm_caseTypes($caseTypes);
+function mailingpresets_civicrm_caseTypes(&$caseTypes) {
+  _mailingpresets_civix_civicrm_caseTypes($caseTypes);
 }
 
 /**
@@ -109,8 +109,8 @@ function webpagetomailing_civicrm_caseTypes(&$caseTypes) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function webpagetomailing_civicrm_angularModules(&$angularModules) {
-_webpagetomailing_civix_civicrm_angularModules($angularModules);
+function mailingpresets_civicrm_angularModules(&$angularModules) {
+  _mailingpresets_civix_civicrm_angularModules($angularModules);
 }
 
 /**
@@ -118,21 +118,6 @@ _webpagetomailing_civix_civicrm_angularModules($angularModules);
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_alterSettingsFolders
  */
-function webpagetomailing_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
-  _webpagetomailing_civix_civicrm_alterSettingsFolders($metaDataFolders);
+function mailingpresets_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
+  _mailingpresets_civix_civicrm_alterSettingsFolders($metaDataFolders);
 }
-
-/**
- * Functions below this ship commented out. Uncomment as required.
- *
-
-/**
- * Implements hook_civicrm_preProcess().
- *
- * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_preProcess
- *
-function webpagetomailing_civicrm_preProcess($formName, &$form) {
-
-}
-
-*/
