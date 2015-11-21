@@ -18,10 +18,11 @@
         <div class="content">
           <select
             crm-ui-id="preset.from_id"
-            crm-ui-select="{allowClear: false, placeholder: ts('Email address')}"
+            crm-ui-select="{allowClear: true, placeholder: ts('Email address')}"
             style="width: 20em;"
             name="from_id"
             ng-model="preset.from_id">
+            <option value=""></option>
             <option ng-repeat="frm in crmFromAddresses.getAll() | filter:{is_active:1} | orderBy:'weight'" value="{{frm.id}}">{{frm.label}}</option>
           </select>
         </div>
@@ -31,10 +32,11 @@
         <div class="content">
           <select
             crm-ui-id="preset.group_id"
-            crm-ui-select="{allowClear: false, placeholder: ts('Group')}"
+            crm-ui-select="{allowClear: true, placeholder: ts('Group')}"
             style="width: 20em;"
             name="group_id"
             ng-model="preset.group_id">
+            <option value=""></option>
             <option ng-repeat="g in mailinggroups | orderBy:'title'" value="{{g.id}}">{{g.title}}</option>
           </select>
         </div>
@@ -44,10 +46,11 @@
         <div class="content">
           <select
             crm-ui-id="preset.template_id"
-            crm-ui-select="{allowClear: false, placeholder: ts('Message template')}"
+            crm-ui-select="{allowClear: true, placeholder: ts('Message template')}"
             style="width: 20em;"
             name="template_id"
             ng-model="preset.template_id">
+            <option value=""></option>
             <option ng-repeat="tpl in crmMessageTemplates" value="{{tpl.id}}">{{tpl.msg_title}}</option>
           </select>
         </div>

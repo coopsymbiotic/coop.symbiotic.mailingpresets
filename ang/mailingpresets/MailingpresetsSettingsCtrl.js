@@ -46,7 +46,8 @@
         'id': null,
         'name': ts('Monthly newsletter'),
         'subject': ts('Monthly newsletter'),
-        'from_id': CRM.crmMailing.fromAddress[0].id,
+        'from_id': '',
+        'group_id': '',
         'template_id': '',
       });
     };
@@ -76,9 +77,7 @@
           {start: ts('Deleting...'), success: ts('Deleted')},
 
           // The save action. Note that crmApi() returns a promise.
-          crmApi('Mailingpreset', 'delete', preset).then(function(data) {
-            console.log(data);
-          })
+          crmApi('Mailingpreset', 'delete', preset)
         );
       }
     };
