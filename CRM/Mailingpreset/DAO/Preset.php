@@ -105,6 +105,12 @@ class CRM_Mailingpreset_DAO_Preset extends CRM_Core_DAO
    */
   public $from_id;
   /**
+   * Recipient Group ID
+   *
+   * @var int unsigned
+   */
+  public $group_id;
+  /**
    * Message Template ID
    *
    * @var int unsigned
@@ -159,6 +165,13 @@ class CRM_Mailingpreset_DAO_Preset extends CRM_Core_DAO
           'type' => CRM_Utils_Type::T_INT,
           'title' => ts('From ID') ,
           'description' => 'From Email ID',
+          'required' => true,
+        ) ,
+        'group_id' => array(
+          'name' => 'group_id',
+          'type' => CRM_Utils_Type::T_INT,
+          'title' => ts('Recipient Group ID') ,
+          'description' => 'Recipient Group ID',
           'required' => true,
         ) ,
         'template_id' => array(

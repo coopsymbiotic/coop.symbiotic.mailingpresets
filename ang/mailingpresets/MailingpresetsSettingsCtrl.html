@@ -1,6 +1,4 @@
 <div class="crm-container">
-  <div crm-ui-debug="mailingpresets"></div>
-
   <form name="MailingPresetsForm" class="crm-mailingpresets-form" crm-ui-id-scope>
     <div ng-show="! mailingpresets.length">
       <p>{{ ts("Click on the New button to get started.") }}</p>
@@ -25,6 +23,19 @@
             name="from_id"
             ng-model="preset.from_id">
             <option ng-repeat="frm in crmFromAddresses.getAll() | filter:{is_active:1} | orderBy:'weight'" value="{{frm.id}}">{{frm.label}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="crm-section">
+        <div class="label">{{ ts("Recipient group:") }}</div>
+        <div class="content">
+          <select
+            crm-ui-id="preset.group_id"
+            crm-ui-select="{allowClear: false, placeholder: ts('Group')}"
+            style="width: 20em;"
+            name="group_id"
+            ng-model="preset.group_id">
+            <option ng-repeat="g in mailinggroups | orderBy:'title'" value="{{g.id}}">{{g.title}}</option>
           </select>
         </div>
       </div>

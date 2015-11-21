@@ -12,6 +12,9 @@
             return crmApi('Mailingpreset', 'get', {
               'option.limit': 0
             });
+          },
+          mailinggroups: function (crmApi) {
+            return crmApi('Group', 'get', {group_type: 2, is_active: 1})
           }
         }
       });
@@ -22,7 +25,7 @@
   //   $scope -- This is the set of variables shared between JS and HTML.
   //   crmApi, crmStatus, crmUiHelp -- These are services provided by civicrm-core.
   //   myContact -- The current contact, defined above in config().
-  angular.module('mailingpresets').controller('MailingpresetsSettingsCtrl', function($scope, crmApi, crmStatus, crmUiHelp, crmFromAddresses, mailingpresets) {
+  angular.module('mailingpresets').controller('MailingpresetsSettingsCtrl', function($scope, crmApi, crmStatus, crmUiHelp, crmFromAddresses, mailingpresets, mailinggroups) {
     // The ts() and hs() functions help load strings for this module.
     var ts = $scope.ts = CRM.ts('mailingpresets');
     var hs = $scope.hs = crmUiHelp({file: 'CRM/Mailingpreset/Presets'}); // See: templates/CRM/Mailingpresets/Presets.hlp
@@ -30,6 +33,7 @@
     // Variables used in the HTML
     $scope.crmFromAddresses = crmFromAddresses;
     $scope.crmMessageTemplates = CRM.crmMailing.mesTemplate;
+    $scope.mailinggroups = mailinggroups.values;
     $scope.mailingpresets = [];
 
     if (mailingpresets.values.length > 0) {
@@ -67,9 +71,6 @@
       $scope.mailingpresets.splice(index, 1);
 
       if (preset.id) {
-        // FIXME: there is most probably a much more trivial way of doing this?
-        // $scope.mailingpresets = _.without($scope.mailingpresets, _.findWhere($scope.mailingpresets, {id: preset.id}));
-
         return crmStatus(
           // Status messages. For defaults, just use "{}"
           {start: ts('Deleting...'), success: ts('Deleted')},

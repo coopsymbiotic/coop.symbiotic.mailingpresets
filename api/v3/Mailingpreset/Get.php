@@ -20,6 +20,7 @@ function civicrm_api3_mailingpreset_get($params) {
       'name' => $dao->name,
       'subject' => $dao->subject,
       'from_id' => $dao->from_id,
+      'group_id' => $dao->group_id,
       'template_id' => $dao->template_id,
     );
   }
