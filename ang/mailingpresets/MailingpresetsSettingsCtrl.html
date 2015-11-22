@@ -55,6 +55,17 @@
           </select>
         </div>
       </div>
+      <div class="crm-section" ng-show="preset.id">
+        <div class="label"></div>
+        <div class="content">
+          <p>{{ ts("Send new mailings from existing web pages by copying this HTML into your website:") }}</p>
+          <textarea rows="5" style="width: 100%;">
+&lt;script type="text/javascript" src="{{ exturl }}/assets/v1/mailingpresets.js"&gt;&lt;/script&gt;
+&lt;link type="text/css" rel="stylesheet" href="{{ exturl }}/assets/v1/mailingpresets.css" media="all" /&gt;
+&lt;div id="civicrm-mailingpreset"&gt;&lt;a href="#" class="btn btn-primary" data-endpoint="{{ ajaxendpoint }}" data-mailingpreset="{{ preset.id }}" data-selector=".main-container"&gt;Create new mailing&lt;/a&gt;&lt;/div&gt;
+          </textarea>
+        </div>
+      </div>
       <div class="crm-section">
         <div class="label"></div>
         <div class="content">

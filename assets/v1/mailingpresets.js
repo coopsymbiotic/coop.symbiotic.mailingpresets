@@ -3,8 +3,8 @@ jQuery(function ($) {
     var $button = $(this);
 
     // Expect an element sur as:
-    // <a href="#" data-baseurl="https://mycivi.example.org/" data-mailingpreset="1" data-selector=".main-container">Create mailing</a>
-    var baseurl = $button.data('baseurl');
+    // <a href="#" data-endpoint="https://mycivi.example.org/civicrm/ajax/rest" data-mailingpreset="1" data-selector=".main-container">Create mailing</a>
+    var endpoint = $button.data('endpoint');
     var mailingpreset = $button.data('mailingpreset');
     var selector = $button.data('selector');
 
@@ -39,7 +39,7 @@ jQuery(function ($) {
     // Call our special API method that will create a new mailing
     // using the configurations from our preset.
     var ajax = $.ajax({
-      url: baseurl + 'civicrm/ajax/rest',
+      url: endpoint,
       dataType: 'json',
       data: {
         entity: 'Mailingpreset',

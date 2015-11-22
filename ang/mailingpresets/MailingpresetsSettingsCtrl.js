@@ -15,6 +15,12 @@
           },
           mailinggroups: function (crmApi) {
             return crmApi('Group', 'get', {group_type: 2, is_active: 1})
+          },
+          ajaxendpoint: function (crmApi) {
+            return crmApi('Mailingpreset', 'setting', {return: 'endpoint'})
+          },
+          exturl: function (crmApi) {
+            return crmApi('Mailingpreset', 'setting', {return: 'exturl'})
           }
         }
       });
@@ -25,7 +31,7 @@
   //   $scope -- This is the set of variables shared between JS and HTML.
   //   crmApi, crmStatus, crmUiHelp -- These are services provided by civicrm-core.
   //   myContact -- The current contact, defined above in config().
-  angular.module('mailingpresets').controller('MailingpresetsSettingsCtrl', function($scope, crmApi, crmStatus, crmUiHelp, crmFromAddresses, mailingpresets, mailinggroups) {
+  angular.module('mailingpresets').controller('MailingpresetsSettingsCtrl', function($scope, crmApi, crmStatus, crmUiHelp, crmFromAddresses, mailingpresets, mailinggroups, ajaxendpoint, exturl) {
     // The ts() and hs() functions help load strings for this module.
     var ts = $scope.ts = CRM.ts('mailingpresets');
     var hs = $scope.hs = crmUiHelp({file: 'CRM/Mailingpreset/Presets'}); // See: templates/CRM/Mailingpresets/Presets.hlp
@@ -34,6 +40,8 @@
     $scope.crmFromAddresses = crmFromAddresses;
     $scope.crmMessageTemplates = CRM.crmMailing.mesTemplate;
     $scope.mailinggroups = mailinggroups.values;
+    $scope.ajaxendpoint = ajaxendpoint.result;
+    $scope.exturl = exturl.result;
     $scope.mailingpresets = [];
 
     if (mailingpresets.values.length > 0) {
