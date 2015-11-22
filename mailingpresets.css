@@ -1,0 +1,34 @@
+/**
+ * CSS used on the other website displaying the "create mailing" button.
+ */
+#civicrm-mailingpreset {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+#civicrm-mailingpreset > a {
+  padding-left: 3.5em;
+  margin-left: 10px;
+}
+
+#civicrm-mailingpreset > a::before {
+  content: "";
+  position: absolute;
+  top: 0.25em;
+  left: 1.5em;
+  background-image: url("/sites/all/modules/civicrm/i/logo_lg.png");
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+}
+
+#civicrm-mailingpreset > a.crm-spinning::before {
+  animation: 2s linear 0s normal none infinite running spin;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
