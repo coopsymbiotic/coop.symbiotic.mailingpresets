@@ -33,6 +33,7 @@ jQuery(function ($) {
     var $html = $(selector).clone();
     $html.find('script').remove();
     $html.find('link').remove();
+    $html.find('#civicrm-mailingpreset').remove();
 
     var body_html = $html.html();
 
