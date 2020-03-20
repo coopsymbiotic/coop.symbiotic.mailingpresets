@@ -27,6 +27,7 @@ function civicrm_api3_mailingpreset_newmailing($params) {
       'name' => $dao->name,
       'subject' => $dao->subject,
       'body_html' => $msg_html,
+      'groups' => ['include' => [$dao->group_id]],
     ));
 
     // Inject the CiviMail URL into the result, so we that we can redirect here.

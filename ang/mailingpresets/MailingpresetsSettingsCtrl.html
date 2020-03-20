@@ -37,7 +37,7 @@
             name="group_id"
             ng-model="preset.group_id">
             <option value=""></option>
-            <option ng-repeat="g in mailinggroups | orderBy:'title'" value="{{g.id}}">{{g.title}}</option>
+            <option ng-repeat="g in mailinggroups" value="{{g.id}}">{{g.title}}</option>
           </select>
         </div>
       </div>
